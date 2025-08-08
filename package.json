@@ -4,16 +4,29 @@
   "description": "Shows the underlying IEEE-754 double precision value (full precision & hex) for floating point literals inline in many languages.",
   "publisher": "Cratior",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": "Cratior",
+  "homepage": "https://github.com/uneven-coder/vscode-trueFloats#readme",
+  "bugs": {
+    "url": "https://github.com/uneven-coder/vscode-trueFloats/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uneven-coder/vscode-trueFloats"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
     "Other"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uneven-coder/vscode-trueFloats"
-  },
+  "keywords": [
+    "float",
+    "floating point",
+    "ieee-754",
+    "precision",
+    "numbers"
+  ],
   "activationEvents": [
     "onStartupFinished",
     "onLanguage:javascript",
