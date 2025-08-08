@@ -1,6 +1,7 @@
 # True Floats VS Code Extension
 
-Shows the underlying IEEE-754 double precision value for floating point literals inline (after each literal) in many languages (C, C++, C#, Java, JavaScript, TypeScript, Python, Go, Rust, Swift, PHP & more that use similar literal syntax).
+Shows the true value of floating-point literals (numbers/values) by showing their full IEEE-754 double-precision representation inline (after each literal). This helps you understand how minor changes in float values often have little or no real impact on your program.
+Supports many languages, including C, C++, C#, Java, JavaScript, TypeScript, Python, Go, Rust, Swift, PHP, and others that use similar literal syntax.
 
 ## Features
 
@@ -10,23 +11,12 @@ Shows the underlying IEEE-754 double precision value for floating point literals
 - Customizable precision, opacity, font sizing, and hex display.
 - Toggle command: `True Floats: Toggle Annotations`.
 - Toggle hex: `True Floats: Toggle Hex`.
-- Inline clickable replacement: click (single or double per setting) on the annotation next to a literal to replace it with the full precision value.
+- ~~Inline clickable replacement: click (single or double per setting) on the annotation next to a literal to replace it with the full precision value.~~ (not able to add currently)
 
-```csharp
-public float value = 1.12333f;
-public float value = 1.00123f;
-public float value = 1.0000000000000001f;
-public float value = 1.123f;
-```
+### An few example from [Full Examples](Examples.md) 
 
-```js
-const values = [
-    1.12333,
-    1.00123,
-    1.0000000000000001,
-    1.123
-];
-```
+<img width="386" height="178" alt="image" src="https://github.com/user-attachments/assets/83f4fe69-1f73-49a4-9593-71e75c5d9548" />
+
 
 ## Settings
 
@@ -39,10 +29,12 @@ const values = [
 | `trueFloats.opacity` | Annotation opacity | `0.55` |
 | `trueFloats.fontSizeDelta` | Relative font size adjustment in px | `-1` |
 | `trueFloats.inlineReplaceTrigger` | none / singleClick / doubleClick to replace by clicking annotation | `doubleClick` |
+| `trueFloats.compactRepeats` | Should truncate (repeating) trailing values | `true` |
+| `trueFloats.compactRepeatMinRun` | Minimum repeated trailing chars needed to truncate | `6` |
 
-## Rationale
+## Why
 
-Many decimal literals (like `0.1`) cannot be represented exactly in binary floating point. This extension helps reveal the stored value so you can better understand precision artifacts and accumulation errors.
+Sometimes trying to set floats to a perfect value things like player speed or movement feels pointless and the more you learn about floats the more you realize why. Many decimal values cannot be represented exactly in binary floating-point format. This extension reveals the actual stored value, helping you understand precision artifacts.
 
 ## Limitations
 
@@ -54,19 +46,6 @@ Many decimal literals (like `0.1`) cannot be represented exactly in binary float
 
 - Respect language comments/strings via tokenization API.
 - Support showing both float32 and float64 where suffix indicates.
-- Add unit tests.
-- Provide command to copy detailed info.
-
-## Development
-
-Install dependencies and build:
-
-```powershell
-npm install
-npm run watch
-```
-
-Press F5 in VS Code to launch an Extension Development Host and open a file containing floating literals.
 
 ## License
 
