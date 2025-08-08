@@ -2,33 +2,104 @@
   "name": "true-floats",
   "displayName": "True Floats",
   "description": "Shows the underlying IEEE-754 double precision value (full precision & hex) for floating point literals inline in many languages.",
-  "publisher": "your-name",
+  "publisher": "Cratior",
   "version": "0.0.1",
-  "engines": { "vscode": "^1.85.0" },
-  "categories": ["Other"],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uneven-coder/vscode-trueFloats"
+  },
   "activationEvents": [
     "onStartupFinished",
-    "onLanguage:javascript","onLanguage:typescript","onLanguage:javascriptreact","onLanguage:typescriptreact",
-    "onLanguage:python","onLanguage:java","onLanguage:c","onLanguage:cpp","onLanguage:csharp","onLanguage:go","onLanguage:rust","onLanguage:swift","onLanguage:php"
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onLanguage:python",
+    "onLanguage:java",
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onLanguage:csharp",
+    "onLanguage:go",
+    "onLanguage:rust",
+    "onLanguage:swift",
+    "onLanguage:php"
   ],
   "contributes": {
     "commands": [
-      { "command": "trueFloats.toggle", "title": "True Floats: Toggle Annotations" },
-  { "command": "trueFloats.refresh", "title": "True Floats: Refresh Now" },
-  { "command": "trueFloats.replaceLiteral", "title": "True Floats: Replace Literal" },
-  { "command": "trueFloats.toggleHex", "title": "True Floats: Toggle Hex" }
+      {
+        "command": "trueFloats.toggle",
+        "title": "True Floats: Toggle Annotations"
+      },
+      {
+        "command": "trueFloats.refresh",
+        "title": "True Floats: Refresh Now"
+      },
+      {
+        "command": "trueFloats.replaceLiteral",
+        "title": "True Floats: Replace Literal"
+      },
+      {
+        "command": "trueFloats.toggleHex",
+        "title": "True Floats: Toggle Hex"
+      }
     ],
     "configuration": {
       "title": "True Floats",
       "properties": {
-        "trueFloats.enabled": { "type": "boolean", "default": true, "description": "Enable inline true float value annotations." },
-  "trueFloats.showHex": { "type": "boolean", "default": false, "description": "Show 64-bit IEEE-754 hex representation." },
-  "trueFloats.onlyWhenDifferent": { "type": "boolean", "default": true, "description": "Only annotate when the literal's canonical full-precision decimal differs from the source token (e.g. 0.1 -> 0.10000000000000001)." },
-        "trueFloats.decimalPrecision": { "type": "integer", "default": 17, "minimum": 1, "maximum": 25, "description": "Number of significant digits to display for the true decimal value (max 25)." },
-        "trueFloats.opacity": { "type": "number", "default": 0.55, "minimum": 0.05, "maximum": 1, "description": "Opacity of the inline annotation (0-1)." },
-  "trueFloats.fontSizeDelta": { "type": "number", "default": -1, "minimum": -6, "maximum": 6, "description": "Relative font size change for annotation (negative to make smaller)." },
-  "trueFloats.compactRepeats": { "type": "boolean", "default": true, "description": "Compact long trailing runs of the same digit (e.g. 0.29999999999999999 -> 0.2…9×14)." },
-  "trueFloats.compactRepeatMinRun": { "type": "integer", "default": 6, "minimum": 3, "maximum": 100, "description": "Minimum run length of a single repeated trailing digit required to compact." }
+        "trueFloats.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable inline true float value annotations."
+        },
+        "trueFloats.showHex": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show 64-bit IEEE-754 hex representation."
+        },
+        "trueFloats.onlyWhenDifferent": {
+          "type": "boolean",
+          "default": true,
+          "description": "Only annotate when the literal's canonical full-precision decimal differs from the source token (e.g. 0.1 -> 0.10000000000000001)."
+        },
+        "trueFloats.decimalPrecision": {
+          "type": "integer",
+          "default": 17,
+          "minimum": 1,
+          "maximum": 25,
+          "description": "Number of significant digits to display for the true decimal value (max 25)."
+        },
+        "trueFloats.opacity": {
+          "type": "number",
+          "default": 0.55,
+          "minimum": 0.05,
+          "maximum": 1,
+          "description": "Opacity of the inline annotation (0-1)."
+        },
+        "trueFloats.fontSizeDelta": {
+          "type": "number",
+          "default": -1,
+          "minimum": -6,
+          "maximum": 6,
+          "description": "Relative font size change for annotation (negative to make smaller)."
+        },
+        "trueFloats.compactRepeats": {
+          "type": "boolean",
+          "default": true,
+          "description": "Compact long trailing runs of the same digit (e.g. 0.29999999999999999 -> 0.2…9×14)."
+        },
+        "trueFloats.compactRepeatMinRun": {
+          "type": "integer",
+          "default": 6,
+          "minimum": 3,
+          "maximum": 100,
+          "description": "Minimum run length of a single repeated trailing digit required to compact."
+        }
       }
     }
   },
