@@ -44,8 +44,8 @@ Sometimes trying to set floats to a perfect value things like player speed or mo
 
 ## Roadmap / Ideas
 
-- Respect language comments/strings via tokenization API.
-- Support showing both float32 and float64 where suffix indicates.
+- Work with language comments/strings.
+- Support showing both float32 and float64.
 
 ## License
 
